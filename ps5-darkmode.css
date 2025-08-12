@@ -1,0 +1,51 @@
+/* ===== Overlay PS5 Dark Mode con Animazioni ===== */
+
+/* Sfondo generale */
+body {
+    background-color: #121212;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+/* Pad container */
+.ps5-controller {
+    filter: drop-shadow(0 0 8px rgba(0,0,0,0.7));
+}
+
+/* Pulsanti */
+.button {
+    background-color: #1e1e1e;
+    border-radius: 50%;
+    transition: all 0.15s ease-in-out;
+    box-shadow: 0 0 4px rgba(255,255,255,0.1);
+}
+
+/* Effetto pressione pulsanti */
+.button.pressed {
+    background-color: #0d47a1;
+    box-shadow: 0 0 10px rgba(33,150,243,0.7);
+    transform: scale(0.92);
+}
+
+/* Stick analogici */
+.stick {
+    background-color: #222;
+    border-radius: 50%;
+    transition: all 0.1s ease-in-out;
+}
+
+.stick.moved {
+    box-shadow: 0 0 6px rgba(0,150,255,0.5);
+    transform: scale(0.95);
+}
+
+/* Trigger */
+.trigger {
+    background-color: #1a1a1a;
+    transition: transform 0.1s ease-in-out;
+}
+
+.trigger.pressed {
+    transform: translateY(3px);
+    box-shadow: inset 0 0 6px rgba(0,150,255,0.4);
+}
