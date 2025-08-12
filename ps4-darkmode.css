@@ -1,50 +1,229 @@
-/* Dark Mode PS4 DualShock 4 Overlay */
+/* PS4 Controller Dark Mode CSS */
 
-/* Corpo pad scuro */
+/* Controller principale */
+.controller.ds4 {
+    background: linear-gradient(145deg, #1a1a1a, #0d0d0d);
+    box-shadow: 
+        0 10px 30px rgba(0,0,0,0.8),
+        inset 0 2px 0 rgba(255,255,255,0.05),
+        inset 0 -2px 10px rgba(0,0,0,0.3);
+    border: 1px solid #333;
+}
+
 .controller.ds4.white {
-    background: #1b1b1b !important;
-    filter: drop-shadow(0 0 10px rgba(0,0,0,0.7));
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
+}
+
+/* Triggers */
+.trigger {
+    background: linear-gradient(180deg, #333, #1a1a1a);
+    border: 1px solid #444;
+    transition: all 0.1s ease;
+}
+
+.trigger:hover {
+    background: linear-gradient(180deg, #444, #2a2a2a);
+}
+
+.trigger-button {
+    background: linear-gradient(180deg, #2a2a2a, #0d0d0d);
+    border: 1px solid #333;
+}
+
+/* Bumpers */
+.bumper {
+    background: linear-gradient(180deg, #333, #1a1a1a);
+    border: 1px solid #444;
+    transition: all 0.1s ease;
+}
+
+.bumper:hover {
+    background: linear-gradient(180deg, #444, #2a2a2a);
 }
 
 /* Touchpad */
-.controller.ds4.white .touchpad {
-    background: #2a2a2a !important;
-    border-radius: 6px;
-    box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
+.touchpad {
+    background: linear-gradient(145deg, #0a0a0a, #1a1a1a);
+    border: 2px solid #333;
+    transition: all 0.2s ease;
 }
 
-/* Stick analogici */
-.controller.ds4.white .stick {
-    background: radial-gradient(circle at 30% 30%, #3a3a3a, #000) !important;
-    border: 1px solid #111;
+.touchpad:hover {
+    background: linear-gradient(145deg, #151515, #252525);
+    border-color: #444;
+    box-shadow: 0 0 10px rgba(255,255,255,0.1);
 }
 
-/* Trigger e bumper */
-.controller.ds4.white .trigger,
-.controller.ds4.white .bumper {
-    background: #1e1e1e !important;
+/* Pulsante PS */
+.meta {
+    background: radial-gradient(circle, #1a4f80, #0d2540);
+    border: 2px solid #333;
+    transition: all 0.2s ease;
 }
 
-/* Pulsanti con colori originali leggermente desaturati */
-.controller.ds4.white .button.a { background: #61c38b !important; }
-.controller.ds4.white .button.b { background: #c36262 !important; }
-.controller.ds4.white .button.x { background: #6c8ed9 !important; }
-.controller.ds4.white .button.y { background: #c5c56e !important; }
+.meta:hover {
+    box-shadow: 0 0 15px rgba(102, 163, 255, 0.5);
+    background: radial-gradient(circle, #2a5f90, #1d3550);
+}
 
-/* Glow alla pressione */
-.controller.ds4.white .button:active,
-.controller.ds4.white .stick:active,
-.controller.ds4.white .trigger:active {
-    box-shadow: 0 0 15px currentColor !important;
+/* Pulsanti Share/Options */
+.back, .start {
+    background: linear-gradient(145deg, #2a2a2a, #0d0d0d);
+    border: 1px solid #444;
+    transition: all 0.1s ease;
+}
+
+.back:hover, .start:hover {
+    background: linear-gradient(145deg, #3a3a3a, #1a1a1a);
+}
+
+/* Pulsanti ABXY */
+.button {
+    border: 2px solid #333;
+    transition: all 0.1s ease;
+    font-weight: bold;
+}
+
+.button.a {
+    background: linear-gradient(145deg, #2a5c2a, #1a3d1a);
+    color: #66ff66;
+}
+
+.button.b {
+    background: linear-gradient(145deg, #5c2a2a, #3d1a1a);
+    color: #ff6666;
+}
+
+.button.x {
+    background: linear-gradient(145deg, #5c2a5c, #3d1a3d);
+    color: #ff66ff;
+}
+
+.button.y {
+    background: linear-gradient(145deg, #2a2a5c, #1a1a3d);
+    color: #6666ff;
+}
+
+.button:hover {
     transform: scale(1.1);
-    transition: all 0.1s ease-in-out;
+    box-shadow: 0 0 10px rgba(255,255,255,0.2);
+    filter: brightness(1.2);
 }
 
-/* D-Pad scuro con glow */
-.controller.ds4.white .dpad .face {
-    background: #2d2d2d !important;
+.button:active {
+    transform: scale(0.95);
 }
-.controller.ds4.white .dpad .face:active {
-    background: #555 !important;
-    box-shadow: 0 0 10px #888;
+
+/* Levette analogiche */
+.stick {
+    background: radial-gradient(circle, #333, #0d0d0d);
+    border: 3px solid #1a1a1a;
+    transition: all 0.1s ease;
+    box-shadow: 
+        inset 0 2px 5px rgba(0,0,0,0.3),
+        0 2px 10px rgba(0,0,0,0.2);
+}
+
+.stick:hover {
+    background: radial-gradient(circle, #444, #1a1a1a);
+}
+
+.stick:active {
+    transform: scale(0.95);
+}
+
+/* D-Pad */
+.face {
+    background: linear-gradient(145deg, #2a2a2a, #0d0d0d);
+    border: 2px solid #333;
+    transition: all 0.1s ease;
+}
+
+.face:hover {
+    background: linear-gradient(145deg, #3a3a3a, #1a1a1a);
+    border-color: #444;
+}
+
+.face:active {
+    background: linear-gradient(145deg, #4a4a4a, #2a2a2a);
+    transform: scale(0.9);
+}
+
+/* Wheels (indicatori levette) */
+.wheel {
+    border: 2px solid #333;
+    opacity: 0.3;
+    transition: opacity 0.2s ease;
+}
+
+.wheel:hover {
+    opacity: 0.6;
+}
+
+/* Stato attivo del controller */
+.controller.active {
+    box-shadow: 
+        0 0 20px rgba(66, 165, 245, 0.3),
+        0 10px 30px rgba(0,0,0,0.8),
+        inset 0 2px 0 rgba(255,255,255,0.05);
+}
+
+/* Effetti hover globali */
+*[data-name]:hover {
+    filter: brightness(1.2);
+}
+
+/* Animazioni */
+@keyframes press {
+    0% { 
+        transform: scale(1); 
+        filter: brightness(1);
+    }
+    50% { 
+        transform: scale(0.95); 
+        filter: brightness(1.5);
+    }
+    100% { 
+        transform: scale(1); 
+        filter: brightness(1);
+    }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+    50% { box-shadow: 0 0 20px rgba(255,255,255,0.3); }
+    100% { box-shadow: 0 0 5px rgba(255,255,255,0.1); }
+}
+
+/* Classe per animazione di pressione */
+.pressed {
+    animation: press 0.2s ease;
+}
+
+/* Animazione per elementi attivi */
+.active-glow {
+    animation: glow 2s infinite;
+}
+
+/* Transizioni smooth per tutti gli elementi interattivi */
+.trigger, .bumper, .touchpad, .meta, .back, .start, 
+.button, .stick, .face, .wheel {
+    transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Stato focus per accessibilità */
+*[data-name]:focus {
+    outline: 2px solid #66a3ff;
+    outline-offset: 2px;
+}
+
+/* Responsive per dispositivi mobili */
+@media (max-width: 768px) {
+    .controller.ds4 {
+        transform: scale(0.8);
+    }
+    
+    .button:hover {
+        transform: scale(1.05);
+    }
 }
