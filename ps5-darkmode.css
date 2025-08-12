@@ -1,51 +1,58 @@
-/* ===== Overlay PS5 Dark Mode con Animazioni ===== */
+/* ===== Overlay PS5 Dark Mode Forzato con Animazioni ===== */
 
-/* Sfondo generale */
+/* Sfondo pagina */
 body {
-    background-color: #121212;
-    color: #fff;
-    font-family: sans-serif;
+    background-color: #121212 !important;
+    color: #fff !important;
+    font-family: sans-serif !important;
 }
 
-/* Pad container */
-.ps5-controller {
-    filter: drop-shadow(0 0 8px rgba(0,0,0,0.7));
+/* Qualsiasi parte del controller */
+svg, path, circle, rect, polygon, g {
+    transition: all 0.15s ease-in-out !important;
+    fill: #1e1e1e !important; /* base scura */
+    stroke: #fff !important;
+    stroke-width: 0.5px !important;
 }
 
-/* Pulsanti */
-.button {
-    background-color: #1e1e1e;
-    border-radius: 50%;
-    transition: all 0.15s ease-in-out;
-    box-shadow: 0 0 4px rgba(255,255,255,0.1);
+/* Pulsanti principali */
+[class*="button"], [id*="button"], .button {
+    fill: #1e1e1e !important;
+    stroke: #fff !important;
 }
-
-/* Effetto pressione pulsanti */
-.button.pressed {
-    background-color: #0d47a1;
-    box-shadow: 0 0 10px rgba(33,150,243,0.7);
-    transform: scale(0.92);
+[pressed], .pressed {
+    fill: #0d47a1 !important;
+    filter: drop-shadow(0 0 8px rgba(33,150,243,0.8)) !important;
+    transform: scale(0.92) !important;
 }
 
 /* Stick analogici */
-.stick {
-    background-color: #222;
-    border-radius: 50%;
-    transition: all 0.1s ease-in-out;
+[role*="stick"], .stick {
+    fill: #222 !important;
 }
-
-.stick.moved {
-    box-shadow: 0 0 6px rgba(0,150,255,0.5);
-    transform: scale(0.95);
+[role*="stick"].moved, .stick.moved {
+    fill: #0d47a1 !important;
+    filter: drop-shadow(0 0 6px rgba(0,150,255,0.5)) !important;
+    transform: scale(0.95) !important;
 }
 
 /* Trigger */
-.trigger {
-    background-color: #1a1a1a;
-    transition: transform 0.1s ease-in-out;
+[role*="trigger"], .trigger {
+    fill: #1a1a1a !important;
+}
+[role*="trigger"].pressed, .trigger.pressed {
+    transform: translateY(3px) !important;
+    fill: #0d47a1 !important;
+    filter: drop-shadow(0 0 6px rgba(0,150,255,0.4)) !important;
 }
 
-.trigger.pressed {
-    transform: translateY(3px);
-    box-shadow: inset 0 0 6px rgba(0,150,255,0.4);
+/* Touchpad */
+[id*="touch"], .touchpad {
+    fill: #1e1e1e !important;
+    stroke: #fff !important;
+}
+
+/* Effetto hover generale */
+svg:hover path, svg:hover circle, svg:hover rect {
+    filter: brightness(1.2) !important;
 }
