@@ -1,40 +1,69 @@
-/* Sfondo e cornice del controller */
+/* ===== Controller Base ===== */
 .controller.ds4.white {
-  filter: brightness(0.7) contrast(1.2);
-  background-color: #111 !important;
+  filter: brightness(0.8) contrast(1.2);
+  background-color: #0d0d0d !important;
 }
 
-/* Pulsanti principali */
+/* ===== Pulsanti ABXY ===== */
 .controller .button {
-  background-color: #222 !important;
-  border: 1px solid #555 !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #444 !important;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+  transition: all 0.2s ease-in-out;
 }
-.controller .button.a { background-color: #1abc9c !important; }
-.controller .button.b { background-color: #e74c3c !important; }
-.controller .button.x { background-color: #3498db !important; }
-.controller .button.y { background-color: #f1c40f !important; }
 
-/* D-pad */
+/* Effetto glow alla pressione */
+.controller .button:active,
+.controller .button.pressed {
+  transform: scale(1.1);
+  box-shadow: 0 0 12px currentColor;
+}
+
+/* Colori personalizzati */
+.controller .button.a { color: #1abc9c; background-color: #0e3d34 !important; }
+.controller .button.b { color: #e74c3c; background-color: #3d0e0e !important; }
+.controller .button.x { color: #3498db; background-color: #0e223d !important; }
+.controller .button.y { color: #f1c40f; background-color: #3d390e !important; }
+
+/* ===== D-pad ===== */
 .controller .dpad .face {
-  background-color: #222 !important;
-  border: 1px solid #555 !important;
+  background-color: #1a1a1a !important;
+  border: 1px solid #444 !important;
+  transition: all 0.2s ease-in-out;
+}
+.controller .dpad .face:active,
+.controller .dpad .face.pressed {
+  box-shadow: 0 0 10px #fff;
+  transform: scale(1.05);
 }
 
-/* Stick */
+/* ===== Sticks ===== */
 .controller .stick {
-  background-color: #333 !important;
-  border: 1px solid #666 !important;
+  background-color: #222 !important;
+  border: 1px solid #555 !important;
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
 }
 
-/* Touchpad */
+/* ===== Touchpad ===== */
 .controller .touchpad {
-  background-color: #222 !important;
+  background-color: #1a1a1a !important;
   border: 1px solid #555 !important;
 }
 
-/* Triggers e bumpers */
+/* ===== Triggers & Bumpers ===== */
 .controller .trigger,
 .controller .bumper {
-  background-color: #222 !important;
+  background-color: #1a1a1a !important;
   border: 1px solid #555 !important;
+}
+
+/* ===== Glow generale quando si preme ===== */
+.controller .pressed {
+  animation: glowPulse 0.3s ease-out;
+}
+
+@keyframes glowPulse {
+  0% { box-shadow: 0 0 0px currentColor; }
+  50% { box-shadow: 0 0 12px currentColor; }
+  100% { box-shadow: 0 0 0px currentColor; }
 }
