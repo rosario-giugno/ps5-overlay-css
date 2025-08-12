@@ -1,69 +1,50 @@
-/* ===== Controller Base ===== */
+/* Dark Mode PS4 DualShock 4 Overlay */
+
+/* Corpo pad scuro */
 .controller.ds4.white {
-  filter: brightness(0.8) contrast(1.2);
-  background-color: #0d0d0d !important;
+    background: #1b1b1b !important;
+    filter: drop-shadow(0 0 10px rgba(0,0,0,0.7));
 }
 
-/* ===== Pulsanti ABXY ===== */
-.controller .button {
-  background-color: #1a1a1a !important;
-  border: 1px solid #444 !important;
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
-  transition: all 0.2s ease-in-out;
+/* Touchpad */
+.controller.ds4.white .touchpad {
+    background: #2a2a2a !important;
+    border-radius: 6px;
+    box-shadow: inset 0 0 8px rgba(0,0,0,0.8);
 }
 
-/* Effetto glow alla pressione */
-.controller .button:active,
-.controller .button.pressed {
-  transform: scale(1.1);
-  box-shadow: 0 0 12px currentColor;
+/* Stick analogici */
+.controller.ds4.white .stick {
+    background: radial-gradient(circle at 30% 30%, #3a3a3a, #000) !important;
+    border: 1px solid #111;
 }
 
-/* Colori personalizzati */
-.controller .button.a { color: #1abc9c; background-color: #0e3d34 !important; }
-.controller .button.b { color: #e74c3c; background-color: #3d0e0e !important; }
-.controller .button.x { color: #3498db; background-color: #0e223d !important; }
-.controller .button.y { color: #f1c40f; background-color: #3d390e !important; }
-
-/* ===== D-pad ===== */
-.controller .dpad .face {
-  background-color: #1a1a1a !important;
-  border: 1px solid #444 !important;
-  transition: all 0.2s ease-in-out;
-}
-.controller .dpad .face:active,
-.controller .dpad .face.pressed {
-  box-shadow: 0 0 10px #fff;
-  transform: scale(1.05);
+/* Trigger e bumper */
+.controller.ds4.white .trigger,
+.controller.ds4.white .bumper {
+    background: #1e1e1e !important;
 }
 
-/* ===== Sticks ===== */
-.controller .stick {
-  background-color: #222 !important;
-  border: 1px solid #555 !important;
-  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+/* Pulsanti con colori originali leggermente desaturati */
+.controller.ds4.white .button.a { background: #61c38b !important; }
+.controller.ds4.white .button.b { background: #c36262 !important; }
+.controller.ds4.white .button.x { background: #6c8ed9 !important; }
+.controller.ds4.white .button.y { background: #c5c56e !important; }
+
+/* Glow alla pressione */
+.controller.ds4.white .button:active,
+.controller.ds4.white .stick:active,
+.controller.ds4.white .trigger:active {
+    box-shadow: 0 0 15px currentColor !important;
+    transform: scale(1.1);
+    transition: all 0.1s ease-in-out;
 }
 
-/* ===== Touchpad ===== */
-.controller .touchpad {
-  background-color: #1a1a1a !important;
-  border: 1px solid #555 !important;
+/* D-Pad scuro con glow */
+.controller.ds4.white .dpad .face {
+    background: #2d2d2d !important;
 }
-
-/* ===== Triggers & Bumpers ===== */
-.controller .trigger,
-.controller .bumper {
-  background-color: #1a1a1a !important;
-  border: 1px solid #555 !important;
-}
-
-/* ===== Glow generale quando si preme ===== */
-.controller .pressed {
-  animation: glowPulse 0.3s ease-out;
-}
-
-@keyframes glowPulse {
-  0% { box-shadow: 0 0 0px currentColor; }
-  50% { box-shadow: 0 0 12px currentColor; }
-  100% { box-shadow: 0 0 0px currentColor; }
+.controller.ds4.white .dpad .face:active {
+    background: #555 !important;
+    box-shadow: 0 0 10px #888;
 }
