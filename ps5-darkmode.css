@@ -1,58 +1,40 @@
-/* ===== Overlay PS5 Dark Mode Forzato con Animazioni ===== */
-
-/* Sfondo pagina */
-body {
-    background-color: #121212 !important;
-    color: #fff !important;
-    font-family: sans-serif !important;
-}
-
-/* Qualsiasi parte del controller */
-svg, path, circle, rect, polygon, g {
-    transition: all 0.15s ease-in-out !important;
-    fill: #1e1e1e !important; /* base scura */
-    stroke: #fff !important;
-    stroke-width: 0.5px !important;
+/* Sfondo e cornice del controller */
+.controller.ds4.white {
+  filter: brightness(0.7) contrast(1.2);
+  background-color: #111 !important;
 }
 
 /* Pulsanti principali */
-[class*="button"], [id*="button"], .button {
-    fill: #1e1e1e !important;
-    stroke: #fff !important;
+.controller .button {
+  background-color: #222 !important;
+  border: 1px solid #555 !important;
 }
-[pressed], .pressed {
-    fill: #0d47a1 !important;
-    filter: drop-shadow(0 0 8px rgba(33,150,243,0.8)) !important;
-    transform: scale(0.92) !important;
+.controller .button.a { background-color: #1abc9c !important; }
+.controller .button.b { background-color: #e74c3c !important; }
+.controller .button.x { background-color: #3498db !important; }
+.controller .button.y { background-color: #f1c40f !important; }
+
+/* D-pad */
+.controller .dpad .face {
+  background-color: #222 !important;
+  border: 1px solid #555 !important;
 }
 
-/* Stick analogici */
-[role*="stick"], .stick {
-    fill: #222 !important;
-}
-[role*="stick"].moved, .stick.moved {
-    fill: #0d47a1 !important;
-    filter: drop-shadow(0 0 6px rgba(0,150,255,0.5)) !important;
-    transform: scale(0.95) !important;
-}
-
-/* Trigger */
-[role*="trigger"], .trigger {
-    fill: #1a1a1a !important;
-}
-[role*="trigger"].pressed, .trigger.pressed {
-    transform: translateY(3px) !important;
-    fill: #0d47a1 !important;
-    filter: drop-shadow(0 0 6px rgba(0,150,255,0.4)) !important;
+/* Stick */
+.controller .stick {
+  background-color: #333 !important;
+  border: 1px solid #666 !important;
 }
 
 /* Touchpad */
-[id*="touch"], .touchpad {
-    fill: #1e1e1e !important;
-    stroke: #fff !important;
+.controller .touchpad {
+  background-color: #222 !important;
+  border: 1px solid #555 !important;
 }
 
-/* Effetto hover generale */
-svg:hover path, svg:hover circle, svg:hover rect {
-    filter: brightness(1.2) !important;
+/* Triggers e bumpers */
+.controller .trigger,
+.controller .bumper {
+  background-color: #222 !important;
+  border: 1px solid #555 !important;
 }
